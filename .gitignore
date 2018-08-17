@@ -1,0 +1,13 @@
+bower_components/bootstrap/.bower.json
+bower_components/bootstrap/grunt/.jshintrc
+bower_components/bootstrap/js/.jscsrc
+bower_components/bootstrap/js/.jshintrc
+bower_components/bootstrap/less/.csscomb.json
+bower_components/bootstrap/less/.csslintrc
+bower_components/jquery/.bower.json
+bower_components/jquery/src/.eslintrc.json
+bower_components/lato-webfont/.bower.json
+coqa/
+node_modules/
+results1.1.json
+results2.0.json
