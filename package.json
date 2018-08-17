@@ -1,5 +1,5 @@
 {
-  "name": "squad-explorer",
+  "name": "coqa",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -17,8 +17,9 @@
     "gulp-replace": "^0.5.4",
     "gulp-stylus": "^2.5.0",
     "jsonfile": "^2.4.0",
-    "moment": "^2.17.1",
-    "nightmare": "^2.9.1"
+    "moment": "^2.22.2",
+    "nightmare": "^2.9.1",
+    "pug": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
@@ -26,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajpurkar/SQuAD-explorer.git"
+    "url": "git+https://github.com/sivareddyg/coqa.git"
   },
-  "author": "Pranav Rajpurkar",
+  "author": "Pranav Rajpurkar, Siva Reddy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rajpurkar/SQuAD-explorer/issues"
+    "url": "https://github.com/sivareddyg/coqa/issues"
   },
-  "homepage": "https://github.com/rajpurkar/SQuAD-explorer#readme"
+  "homepage": "https://github.com/sivareddyg/coqa#readme"
 }

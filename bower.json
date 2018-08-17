@@ -1,12 +1,13 @@
 {
-  "name": "squad-explorer",
+  "name": "coqa",
   "description": "",
   "main": "gulpfile.js",
   "authors": [
-    "Pranav Rajpurkar"
+    "Pranav Rajpurkar",
+    "Siva Reddy"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/rajpurkar/SQuAD-explorer",
+  "homepage": "https://nlp.stanford.edu/coqa",
   "private": true,
   "ignore": [
     "**/.*",
