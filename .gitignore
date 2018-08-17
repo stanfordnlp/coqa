@@ -1,5 +1,6 @@
 node_modules/
 SQuAD-explorer/
+coqa/
 .publish/
 bower_components/
 *.DS_Store
