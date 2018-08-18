@@ -1,10 +1,10 @@
 extends layout
 
 block title
-  title The Stanford Question Answering Dataset
+  title The Conversational Question Answering Challenge
 
 block description
-  meta(name='description', content='Stanford Question Answering Dataset (SQuAD) is a new reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage. With 100,000+ question-answer pairs on 500+ articles, SQuAD is significantly larger than previous reading comprehension datasets.')
+  meta(name='description', content='The Conversational Question Answering (CoQA) Challenge is a new reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage. With 100,000+ question-answer pairs on 500+ articles, SQuAD is significantly larger than previous reading comprehension datasets.')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/index.css')
@@ -18,20 +18,24 @@ mixin squad_2_model_display(group, is_test)
       if is_test
         th Rank
       th Model
-      th EM
-      th F1
-    - var human_em = 86.831
-    - var human_f1 = 89.452
-    - var largest_em = Math.max.apply(null, group.map(function (model) { return model.em; }))
-    - var largest_f1 = Math.max.apply(null, group.map(function (model) { return model.f1; }))
+      th In-domain
+      th Out-of-domain
+      th Overall
+    - var human_in_domain_f1 = 89.387
+    - var human_out_of_domain_f1 = 87.374
+    - var human_overall_f1 = 88.798
+    - var largest_in_domain_f1 = Math.max.apply(null, group.map(function (model) { return model.in_domain_f1; }))
+    - var largest_out_of_domain_f1 = Math.max.apply(null, group.map(function (model) { return model.out_of_domain_f1; }))
+    - var largest_overall_f1 = Math.max.apply(null, group.map(function (model) { return model.overall_f1; }))
       tr.human-row
         td
         td
           | Human Performance
           p.institution Stanford University
-          a(href="http://arxiv.org/abs/1606.05250") (Rajpurkar & Jia et al. '18)
-        td #{human_em}
-        td #{human_f1}
+          a(href="http://arxiv.org/abs/1606.05250") (Reddy et al. '18)
+        td #{human_in_domain_f1}
+        td #{human_out_of_domain_f1}
+        td #{human_overall_f1}
     each model in group
       tr
         if is_test
@@ -44,60 +48,22 @@ mixin squad_2_model_display(group, is_test)
           if model.link
             a.link(href=model.link) #{model.link}
         td
-          if model.em == largest_em
-            b #{model.em.toPrecision(5)}
+          if model.in_domain_f1 == largest_in_domain_f1
+            b #{model.in_domain_f1.toPrecision(5)}
           else
-            | #{model.em.toPrecision(5)}
+            | #{model.in_domain_f1.toPrecision(5)}
         td
-          if model.f1 == largest_f1
-            b #{model.f1.toPrecision(5)}
+          if model.out_of_domain_f1 == largest_out_of_domain_f1
+            b #{model.out_of_domain_f1.toPrecision(5)}
           else
-            | #{model.f1.toPrecision(5)}
+            | #{model.out_of_domain_f1.toPrecision(5)}
+        td
+          if model.overall_f1 == largest_overall_f1
+            b #{model.overall_f1.toPrecision(5)}
+          else
+            | #{model.overall_f1.toPrecision(5)}
 
-mixin squad_1_model_display(group, is_test)
-  table.table.performanceTable
-    tr
-      if is_test
-        th Rank
-      th Model
-      th EM
-      th F1
-    - var human_em = 82.304
-    - var human_f1 = 91.221
-    - var is_human_performance_printed = false
-    - var largest_em = Math.max.apply(null, group.map(function (model) { return model.em; }))
-    - var largest_f1 = Math.max.apply(null, group.map(function (model) { return model.f1; }))
-    each model in group
-      if !is_human_performance_printed
-        - is_human_performance_printed = true
-        tr.human-row
-          td
-          td
-            | Human Performance
-            p.institution Stanford University
-            a(href="http://arxiv.org/abs/1606.05250") (Rajpurkar et al. '16)
-          td #{human_em}
-          td #{human_f1}
-      tr
-        if is_test
-          td 
-            p #{model.rank}
-            span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
-        td(style="word-break:break-word;")
-          | #{model.model_name}
-          p.institution #{model.institution}
-          if model.link
-            a.link(href=model.link) #{model.link}
-        td
-          if model.em == largest_em
-            b #{model.em.toPrecision(5)}
-          else
-            | #{model.em.toPrecision(5)}
-        td
-          if model.f1 == largest_f1
-            b #{model.f1.toPrecision(5)}
-          else
-            | #{model.f1.toPrecision(5)}
+
 block content
   .cover#contentCover
     .container
@@ -106,30 +72,28 @@ block content
           .infoCard
             .infoBody
               .infoHeadline
-                h2 What is SQuAD?
+                h2 What is CoQA?
               p 
                 span
-                  b S
-                  |tanford 
-                  b Qu
+                  b Co
+                  |nversational 
+                  b Q
                   |estion 
                   b A
                   |nswering 
                   b D
-                  |ataset (SQuAD) 
+                  |ataset (CoQA) 
                 | is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or 
                 i span
                 | , from the corresponding reading passage, or the question might be unanswerable.
               hr
               p
-                span.label.label-default New
-                b  SQuAD2.0
+                b  CoQA
                 |  combines the 100,000 questions in SQuAD1.1 with over 50,000 new, unanswerable questions written adversarially by crowdworkers to look similar to answerable ones. To do well on SQuAD2.0, systems must not only answer questions when possible, but also determine when no answer is supported by the paragraph and abstain from answering.
-                | SQuAD2.0 is a challenging natural language understanding task for existing models, and we release SQuAD2.0 to the community as the successor to SQuAD1.1. 
+                | CoQA is a challenging natural language understanding task for existing models, and we release SQuAD2.0 to the community as the successor to SQuAD1.1. 
                 | We are optimistic that this new dataset will encourage the development of reading comprehension systems that know what they don't know.
               //-a.btn.actionBtn(href="/explore/1.1/dev/") Explore SQuAD and model predictions
-              a.btn.actionBtn(href="http://arxiv.org/abs/1806.03822") SQuAD2.0 paper (Rajpurkar & Jia et al. '18)
-              a.btn.actionBtn(href="http://arxiv.org/abs/1606.05250") SQuAD1.0 paper (Rajpurkar et al. '16)
+              a.btn.actionBtn(href="http://arxiv.org/abs/TODO") SQuAD2.0 paper (Reddy et al. '18)
               .infoHeadline
                 h2 Getting Started
               p
@@ -180,12 +144,5 @@ block content
             .infoBody
               .infoHeadline
                 h2 Leaderboard
-              p SQuAD2.0 tests the ability of a system to not only answer reading comprehension questions, but also abstain when presented with a question that cannot be answered based on the provided paragraph.  How will your system compare to humans on this task? 
+              p CoQA tests the ability of a system to not only answer reading comprehension questions, but also abstain when presented with a question that cannot be answered based on the provided paragraph.  How will your system compare to humans on this task? 
               +squad_2_model_display(test2, true)
-          .infoCard
-            .infoBody
-              .infoHeadline
-                h2 SQuAD1.1 Leaderboard 
-              p 
-                |  Since the release of SQuAD1.0, the community has made rapid progress, with the best models now rivaling human performance on the task. Here are the ExactMatch (EM) and F1 scores evaluated on the test set of v1.1.
-              +squad_1_model_display(test1, true)

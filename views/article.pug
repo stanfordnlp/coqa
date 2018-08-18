@@ -1,10 +1,10 @@
 extends layout
 
 block title
-  title SQuAD - the Stanford Question Answering Dataset
+  title CoQA - the Conversational Question Answering Challenge
 
 block description
-  meta(name='description', content='SQuAD is the Stanford Question Answering Dataset')
+  meta(name='description', content='CoQA is the Conversational Question Answering Challenge')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/article.css')
@@ -27,7 +27,7 @@ block content
               h2 Scores
             .infoBody
               h1#title #{decodeURIComponent(title)}
-              h2#subtitle The Stanford Question Answering Dataset
+              h2#subtitle Conversational Question Answering Challenge
               div         
                 each paragraph in paragraphs
                   .para-wrap

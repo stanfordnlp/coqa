@@ -17,9 +17,8 @@ var build_dir = 'coqa/' // good to have this be the same as the repo name for gh
 
 var rankEntries = function (entries) {
   entries.sort(function (a, b) {
-    var f1Diff = Math.sign(b.f1 - a.f1)
-    var emDiff = Math.sign(b.em - a.em)
-    return f1Diff + emDiff
+    var f1Diff = Math.sign(b.overall_f1 - a.overall_f1)
+    return f1Diff
   })
 
   for (var i = 0; i < entries.length; i++) {
@@ -29,7 +28,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.em < prevEntry.em && entry.f1 < prevEntry.f1) rank++
+      if (entry.overall_f1 < prevEntry.overall_f1) rank++
       entry.rank = rank
     }
   }
@@ -59,10 +58,11 @@ var parseCompEntries = function (comp_file) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
       entry.date = o_entry.submission.created
-      entry.em = parseFloat(o_entry.scores.exact_match)
-      entry.f1 = parseFloat(o_entry.scores.f1)
-      if (!(entry.em >= 0)) throw 'Score invalid'
-      if (entry.em < 50) throw 'Score too low'
+      entry.in_domain_f1 = parseFloat(o_entry.scores.in_domain_f1)
+      entry.out_of_domain_f1 = parseFloat(o_entry.scores.out_of_domain_f1)
+      entry.overall_f1 = parseFloat(o_entry.scores.overall_f1)
+      if (!(entry.overall_f1 >= 0)) throw 'Score invalid'
+      if (entry.overall_f1 < 50) throw 'Score too low'
       if (entry.model_name === '') {
         entry.model_name = 'Unnamed submission by ' + entry.user
       }
@@ -93,8 +93,9 @@ var parseEntries = function (htmlStr) {
       entry.link = entry.description.substr(entry.description.lastIndexOf('http')).trim()
     }
     delete entry.description
-    entry.f1 = parseFloat(cells.eq(4).text())
-    entry.em = parseFloat(cells.eq(3).text())
+    entry.overall_f1 = parseFloat(cells.eq(5).text())
+    entry.out_of_domain_f1 = parseFloat(cells.eq(4).text())
+    entry.in_domain_f1 = parseFloat(cells.eq(3).text())
     entry.date = cells.eq(2).text().trim()
     entries.push(entry)
   })
@@ -134,7 +135,7 @@ gulp.task('scrape_website', function (cb) {
       'ignore-certificate-errors': true
     }
   })
-  nightmare.goto('https://worksheets.codalab.org/worksheets/0x62eefc3e64e04430a1a24785a9293fff/')
+  nightmare.goto('https://worksheets.codalab.org/worksheets/0x374c0149636344479ba93db1f4814fbb')
   .wait(2000)
   .evaluate(function () {
     return document.body.innerHTML
@@ -169,73 +170,19 @@ var filepaths = [
 
 var exploration_tasks = []
 
-filepaths.forEach(function (filename) {
-  var article_generations = []
-  var build_prefix = 'explore/'
-
-  var json_file = require(filename)
-  var version = json_file.version
-  var split = path.basename(filename, '.json').split('-')[0]
-  var json_data = json_file.data
-  var version_and_split = version + '/' + split
-
-  json_data.forEach(function (article) {
-    var name = version_and_split + '/' + article['title']
-    gulp.task(name, function () {
-      return gulp.src('views/article.pug')
-        .pipe(data(function () {
-          return article
-        }))
-        .pipe(pug())
-        .pipe(rename(name + '.html'))
-        .pipe(gulp.dest('./' + build_dir + build_prefix))
-    })
-    article_generations.push(name)
-    exploration_tasks.push(name)
-  })
-
-  // models
-  var models_folder = './models/'
-  var models = fs.readdirSync(models_folder).map(
-    function (a) { return a.slice(0, -5) })
-
-  var list_task_name = version_and_split + '/' + 'index'
-  exploration_tasks.push(list_task_name)
-  gulp.task(list_task_name, function () {
-    return gulp.src('views/explore.pug')
-      .pipe(data(function () {
-        return {
-          'articles': article_generations,
-          'prefix': build_prefix,
-          'version': version,
-          'split': split,
-          'models': models
-        }
-      }))
-      .pipe(pug())
-      .pipe(rename(list_task_name + '.html'))
-      .pipe(gulp.dest('./' + build_dir + build_prefix))
-  })
-})
 
 gulp.task('process_comp_output', function (cb) {
   var jsonfile = require('jsonfile')
-  var entries1 = parseCompEntries('./out-v1.1.json')
-  var entries2 = parseCompEntries('./out-v2.0.json')
-  jsonfile.writeFile('./results1.1.json', entries1, function (err){
-    if (err) return cb(err)
-    jsonfile.writeFile('./results2.0.json', entries2, cb)
-  })
+  var entries1 = parseCompEntries('./out-v1.0.json')
+  jsonfile.writeFile('./results1.0.json', entries1, cb)
 })
 
 gulp.task('generate_index', ['process_comp_output'], function () {
-  var test_1 = require('./results1.1.json')
-  var test_2 = require('./results2.0.json')
+  var test_1 = require('./results1.0.json')
   var moment = require('moment')
   return gulp.src('views/index.pug')
       .pipe(data(function () {
-        return { 'test1': test_1,
-          'test2': test_2,
+        return { 'test2': test_1,
           'moment': moment}
       }))
     .pipe(pug())
@@ -259,6 +206,6 @@ gulp.task('deploy', function () {
     .pipe(ghPages())
 })
 
-gulp.task('generate_exploration', exploration_tasks)
-gulp.task('generate', ['bower', 'generate_exploration', 'generate_index', 'process_comp_output'])
+// gulp.task('generate_exploration', exploration_tasks)
+gulp.task('generate', ['bower', 'generate_index', 'process_comp_output'])
 gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_dataset', 'copy_models'])
