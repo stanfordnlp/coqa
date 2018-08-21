@@ -137,7 +137,7 @@
             },
             "submission": {
                 "created": 1533166342,
-                "description": "DrQA + Seq2seq with copy attention (single model) (Stanford University)",
+                "description": "DrQA + seq2seq with copy attention (single model) (Stanford University)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
