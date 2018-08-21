@@ -208,4 +208,4 @@ gulp.task('deploy', function () {
 
 // gulp.task('generate_exploration', exploration_tasks)
 gulp.task('generate', ['bower', 'generate_index', 'process_comp_output'])
-gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_dataset', 'copy_models'])
+gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css'])
