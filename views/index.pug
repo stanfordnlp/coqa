@@ -1,10 +1,10 @@
 extends layout
 
 block title
-  title A Conversational Question Answering Challenge
+  title CoQA: A Conversational Question Answering Challenge
 
 block description
-  meta(name='description', content='CoQA is a large-scale dataset for building Conversational Question Answering systems.')
+  meta(name='description', content='CoQA is a large-scale dataset for building Conversational Question Answering systems. The goal of the CoQA challenge is to measure the ability of machines to understand a text passage and answer a series of interconnected questions that appear in a conversation.')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/index.css')
@@ -21,9 +21,9 @@ mixin squad_2_model_display(group, is_test)
       th In-domain
       th Out-of-domain
       th Overall
-    - var human_in_domain_f1 = 89.387
-    - var human_out_of_domain_f1 = 87.374
-    - var human_overall_f1 = 88.798
+    - var human_in_domain_f1 = 89.4
+    - var human_out_of_domain_f1 = 87.4
+    - var human_overall_f1 = 88.8
     - var largest_in_domain_f1 = Math.max.apply(null, group.map(function (model) { return model.in_domain_f1; }))
     - var largest_out_of_domain_f1 = Math.max.apply(null, group.map(function (model) { return model.out_of_domain_f1; }))
     - var largest_overall_f1 = Math.max.apply(null, group.map(function (model) { return model.overall_f1; }))
@@ -32,7 +32,7 @@ mixin squad_2_model_display(group, is_test)
         td
           | Human Performance
           p.institution Stanford University
-          a(href="http://arxiv.org/abs/1606.05250") (Reddy et al. '18)
+          a(href="http://arxiv.org/abs/1808.07042") (Reddy et al. '18)
         td #{human_in_domain_f1}
         td #{human_out_of_domain_f1}
         td #{human_overall_f1}
@@ -49,19 +49,19 @@ mixin squad_2_model_display(group, is_test)
             a.link(href=model.link) #{model.link}
         td
           if model.in_domain_f1 == largest_in_domain_f1
-            b #{model.in_domain_f1.toPrecision(5)}
+            b #{model.in_domain_f1.toPrecision(3)}
           else
-            | #{model.in_domain_f1.toPrecision(5)}
+            | #{model.in_domain_f1.toPrecision(3)}
         td
           if model.out_of_domain_f1 == largest_out_of_domain_f1
-            b #{model.out_of_domain_f1.toPrecision(5)}
+            b #{model.out_of_domain_f1.toPrecision(3)}
           else
-            | #{model.out_of_domain_f1.toPrecision(5)}
+            | #{model.out_of_domain_f1.toPrecision(3)}
         td
           if model.overall_f1 == largest_overall_f1
-            b #{model.overall_f1.toPrecision(5)}
+            b #{model.overall_f1.toPrecision(3)}
           else
-            | #{model.overall_f1.toPrecision(5)}
+            | #{model.overall_f1.toPrecision(3)}
 
 
 block content
@@ -82,72 +82,104 @@ block content
                   |uestion 
                   b A
                   |nswering 
-                | systems. The goal of CoQA challenge is to measure the ability of machines to understand a text passage and answer a series of interconnected questions that appear in a conversation. CoQA is prounounced as 
-                a(href="https://en.wikipedia.org/wiki/Coca") coca <img src="logo.png" width="8%">.
+                | systems. The goal of the CoQA challenge is to measure the ability of machines to understand a text passage and answer a series of interconnected questions that appear in a conversation. CoQA is pronounced as 
+                a(href="https://en.wikipedia.org/wiki/Coca") coca <img src="logo.png" width="8%">
+                | .
               hr
               p
                 b  CoQA 
                 | contains 127,000+ questions with answers collected from 8000+ conversations. 
-                | Each conversation in 
-                | CoQA is collected by pairing two crowdworkers to chat about a passage in the form of questions and answers. 
-                | The unique features of CoQA include 1) the questions are conversational; 2) the answers can be free-form text; 3) each answer also contains an evidence highlighted in the passage; and 4) the passages are collected from seven diverse domains.
+                | Each conversation  
+                | is collected by pairing two crowdworkers to chat about a passage in the form of questions and answers. 
+                | The unique features of CoQA include 1) the questions are conversational; 2) the answers can be free-form text; 3) each answer also comes with an evidence subsequence highlighted in the passage; and 4) the passages are collected from seven diverse domains.
                 | CoQA has a lot of challenging phenomena not present in existing reading comprehension datasets, e.g., coreference and pragmatic reasoning.
 
               //-a.btn.actionBtn(href="/explore/1.1/dev/") Explore SQuAD and model predictions
-              a.btn.actionBtn(href="http://arxiv.org/abs/TODO") CoQA paper (Reddy et al. '18)
+              a.btn.actionBtn(href="http://arxiv.org/abs/1808.07042") CoQA paper (Reddy et al. '18)
               .infoHeadline
                 h2 Download
               p
-                | Before downloading the dataset, we assume you have the licenses mentioned 
-                a(href="https://github.com/stanfordnlp/coqa#license") at this url
-                | .
-              hr
-              p
-                | To browse conversations in CoQA, click below.
+                | Browse the examples in CoQA:
                 ul.list-unstyled
                   li
                     a.btn.actionBtn.inverseBtn(href="https://drive.google.com/open?id=1ik0d_nIsGdXLn8o7tYiiDWN6PK2XNy-D")
-                      | Browse Dev Set
+                      | Browse CoQA
 
-                  li
-                    a.btn.actionBtn.inverseBtn(href="https://drive.google.com/open?id=1wekA7RU9eZSGItBudr58NTYZUCukYZih")
-                      | Browse Training Set
               p 
-                | To download the dataset in json format, click below.
+                | Download a copy of the dataset in json format:
                 ul.list-unstyled
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/rest/bundles/0xe254829ab81946198433c4da847fb485/contents/blob/", download)
-                      | Download Dev Set (9 MB)
-                  li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/rest/bundles/0xe3674fd34560425786f97541ec91aeb8/contents/blob/", download)
+                    a.btn.actionBtn.inverseBtn(href="https://nlp.stanford.edu/data/coqa/coqa-train-v1.0.json", download)
                       | Download Training Set (47 MB)
+                  li
+                    a.btn.actionBtn.inverseBtn(href="https://nlp.stanford.edu/data/coqa/coqa-dev-v1.0.json", download)
+                      | Download Dev Set (9 MB)
               hr
-              p To evaluate your models, please use the official evaluation script. To run the evaluation, use 
+              .infoHeadline
+                h2 Evaluation
+              p To evaluate your models, use the official evaluation script. To run the evaluation, use 
                 code
                   | python evaluate-v1.0.py --data-file &lt;path_to_dev-v1.0.json&gt; --pred-file &lt;path_to_predictions&gt;
                 |.
                 ul.list-unstyled
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/rest/bundles/0x3f956c8b9eec44588dbe536d38eb7fb9/contents/blob/", download)
+                    a.btn.actionBtn.inverseBtn(href="https://nlp.stanford.edu/data/coqa/evaluate-v1.0.py", download)
                       | Evaluation Script
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/rest/bundles/0xd584cdc127284880a65554a849d09afc/contents/blob/", download)
+                    a.btn.actionBtn.inverseBtn(href="https://nlp.stanford.edu/data/coqa/drqa-pgnet-coqa-dev-hist1.txt.json", download)
                       | Sample Prediction File (on Dev Set)
-              p Once you have a built a model that works to your expectations on the dev set, you submit it to get official scores on the dev and a hidden test set. To preserve the integrity of test results, we do not release the test set to the public. Instead, we require you to submit your model so that we can run it on the test set for you. Here's a tutorial walking you through official evaluation of your model:
-              a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/worksheets/0x374c0149636344479ba93db1f4814fbb/")
+              p Once you are satisfied with your model performance on the dev set, you submit it to get the official scores on the test sets. We have two test sets, an in-domain set which constitutes the domains present in the training and the dev sets, and an out-of-domain set which constitutes unseen domains (see the paper for more details). To preserve the integrity of the test results, we do not release the test set to the public. Follow this tutorial on how to submit your model for an official evaluation:
+              a.btn.actionBtn.inverseBtn(href="https://github.com/stanfordnlp/coqa-baselines/blob/master/codalab.md")
                 | Submission Tutorial
               .infoHeadline
-                h2 Have Questions?
+                h2 License
+              p
+                | CoQA contains passages from seven domains. We make five of these public under the following licenses:
+                ul.list
+                  li
+                    | Literature and Wikipedia passages are shared under 
+                    a(href="https://creativecommons.org/licenses/by-sa/4.0/") CC BY-SA 4.0 
+                    | license. 
+                  li
+                    | Children's stories are collected from 
+                    a(href="https://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/") MCTest 
+                    | which comes with 
+                    a(href="https://github.com/mcobzarenco/mctest/blob/master/data/MCTest/LICENSE.pdf") MSR-LA 
+                    | license. 
+                  li
+                    | Middle/High school exam passages are collected from 
+                    a(href="https://arxiv.org/abs/1704.04683") RACE 
+                    | which comes with its 
+                    a(href="http://www.cs.cmu.edu/~glai1/data/race/") own 
+                    | license. 
+                  li
+                    | News passages are collected from the 
+                    a(href="https://arxiv.org/abs/1506.03340") DeepMind CNN dataset  
+                    | which comes with 
+                    a(href="https://github.com/deepmind/rc-data/blob/master/LICENSE") Apache 
+                    | license. 
+              .infoHeadline
+                h2 Questions?
               p 
-                | If you have a question about the challenge, please raise an issue on our 
-                a(href="https://github.com/stanfordnlp/coqa") github page
+                | Ask us questions at our 
+                a(href="https://groups.google.com/forum/#!forum/coqa") google group 
+                | or at 
+                a(href="mailto:sivar@cs.stanford.edu") sivar@cs.stanford.edu 
+                | or 
+                a(href="mailto:danqi@cs.stanford.edu") danqi@cs.stanford.edu
                 | .
+              .infoHeadline
+                h2 Acknowledgements
+              p 
+                | We thank the 
+                a(href="https://rajpurkar.github.io/SQuAD-explorer/") SQuAD team 
+                | for allowing us to use their code and templates for generating this website.
             .infoSubheadline
               include includes/tweet
-              include includes/github
         .col-md-7
           .infoCard
             .infoBody
               .infoHeadline
                 h2 Leaderboard
               +squad_2_model_display(test2, true)
+
