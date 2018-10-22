@@ -136,7 +136,7 @@
                 "overall_f1": 75.0
             },
             "submission": {
-                "created": 1539911559,
+                "created": 1538850800,
                 "description": "FlowQA (single model) (Allen Institute for Artificial Intelligence) https://arxiv.org/abs/1810.06683",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
