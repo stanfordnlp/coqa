@@ -64,13 +64,28 @@
     "leaderboard": [
         {
             "scores": {
+                "in_domain_f1": 80.7,
+                "out_of_domain_f1": 75.9,
+                "overall_f1": 79.3
+            },
+            "submission": {
+                "created": 1543539993,
+                "description": "SDNet (ensemble model) (Microsoft Speech and Dialogue Research Group)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "sivareddy"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 78.0,
                 "out_of_domain_f1": 73.1,
                 "overall_f1": 76.6
             },
             "submission": {
                 "created": 1543268369,
-                "description": "SDNet (Single model) (Microsoft Speech and Dialogue Research Group)",
+                "description": "SDNet (single model) (Microsoft Speech and Dialogue Research Group)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
