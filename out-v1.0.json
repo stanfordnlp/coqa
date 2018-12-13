@@ -64,13 +64,28 @@
     "leaderboard": [
         {
             "scores": {
+                "in_domain_f1": 81.4,
+                "out_of_domain_f1": 77.3,
+                "overall_f1": 80.2
+            },
+            "submission": {
+                "created": 1544680329,
+                "description": "D-AoA + BERT (single model) (Joint Laboratory of HIT and iFLYTEK Research)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "sivareddy-coqa-zpchen"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 80.7,
                 "out_of_domain_f1": 75.9,
                 "overall_f1": 79.3
             },
             "submission": {
                 "created": 1543539993,
-                "description": "SDNet (ensemble model) (Microsoft Speech and Dialogue Research Group)",
+                "description": "SDNet (ensemble model) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -85,7 +100,7 @@
             },
             "submission": {
                 "created": 1543268369,
-                "description": "SDNet (single model) (Microsoft Speech and Dialogue Research Group)",
+                "description": "SDNet (single model) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -101,6 +116,21 @@
             "submission": {
                 "created": 1538850800,
                 "description": "FlowQA (single model) (Allen Institute for Artificial Intelligence) https://arxiv.org/abs/1810.06683",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "sivareddy"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 71.1,
+                "out_of_domain_f1": 65.5,
+                "overall_f1": 69.5
+            },
+            "submission": {
+                "created": 1544499041,
+                "description": "BiDAF++ (single model) (Beijing University of Posts and Telecommunications)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
