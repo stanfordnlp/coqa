@@ -92,6 +92,21 @@
                 "user_name": "sivareddy"
             }
         },
+	{
+            "scores": {
+                "in_domain_f1": 79.8,
+                "out_of_domain_f1": 74.1,
+                "overall_f1": 78.1
+            },
+            "submission": {
+                "created": 1546195891,
+                "description": "BERT-base finetune (single model) (Tsinghua University CoAI Lab)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "KKnotalone-TransformerCoqa"
+            }
+        },
         {
             "scores": {
                 "in_domain_f1": 78.0,
@@ -116,6 +131,21 @@
             "submission": {
                 "created": 1538850800,
                 "description": "FlowQA (single model) (Allen Institute for Artificial Intelligence) https://arxiv.org/abs/1810.06683",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "sivareddy"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 71.6,
+                "out_of_domain_f1": 65.1,
+                "overall_f1": 69.7
+            },
+            "submission": {
+                "created": 1546195891,
+                "description": "DrQA + marker features (single model) (Stanford University)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -165,6 +195,36 @@
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "sivareddy"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 68.1,
+                "out_of_domain_f1": 62.3,
+                "overall_f1": 66.4
+            },
+            "submission": {
+                "created": 1545111857,
+                "description": "RNet_DotAtt + seq2seq with copy attention (single model) (University of Science and Technology of China)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "home-rowitzou"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 68.7,
+                "out_of_domain_f1": 60.5,
+                "overall_f1": 66.3
+            },
+            "submission": {
+                "created": 1546195891,
+                "description": "Simplified BiDAF++ (single model) (Peking University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "beibeiyang-coqa_stacked_attention"
             }
         },
         {
