@@ -64,6 +64,36 @@
     "leaderboard": [
         {
             "scores": {
+                "in_domain_f1": 83.8,
+                "out_of_domain_f1": 80.2,
+                "overall_f1": 82.8
+            },
+            "submission": {
+                "created": 1546564583,
+                "description": "BERT + Answer Verification (single model) (Sogou Search AI Group)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "dengchao-coqa-sub1"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 82.7,
+                "out_of_domain_f1": 78.6,
+                "overall_f1": 81.5
+            },
+            "submission": {
+                "created": 1546820211,
+                "description": "BERT with History Augmented Query (single model) (Fudan University NLP Lab)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "xkhu-bert-hist-3"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 81.4,
                 "out_of_domain_f1": 77.3,
                 "overall_f1": 80.2
