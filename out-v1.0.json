@@ -64,6 +64,21 @@
     "leaderboard": [
         {
             "scores": {
+                "in_domain_f1": 86.4,
+                "out_of_domain_f1": 81.9,
+                "overall_f1": 85.0
+            },
+            "submission": {
+                "created": 1548121867,
+                "description": "BERT + MMFT + ADA (single model) (Microsoft Research Asia)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "fnwmrc-coqa-nya"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 83.8,
                 "out_of_domain_f1": 80.2,
                 "overall_f1": 82.8
@@ -90,6 +105,21 @@
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "xkhu-bert-hist-3"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 82.5,
+                "out_of_domain_f1": 77.6,
+                "overall_f1": 81.1
+            },
+            "submission": {
+                "created": 1548121867,
+                "description": "BERT Large Augmented (single model) (Microsoft Business Applications Group)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "studyfang-coqa-bert"
             }
         },
         {
@@ -165,6 +195,21 @@
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "sivareddy"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 74.7,
+                "out_of_domain_f1": 70.0,
+                "overall_f1": 73.3
+            },
+            "submission": {
+                "created": 1547491944,
+                "description": "RNet + PGNet + BERT (single model) (Nanjing University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "tracy-coqa-0112"
             }
         },
         {
