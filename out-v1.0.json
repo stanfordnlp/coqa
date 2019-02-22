@@ -64,6 +64,21 @@
     "leaderboard": [
         {
             "scores": {
+                "in_domain_f1": 87.5,
+                "out_of_domain_f1": 85.3,
+                "overall_f1": 86.8
+            },
+            "submission": {
+                "created": 1548463956,
+                "description": "BERT + MMFT + ADA (ensemble) (Microsoft Research Asia)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "nya.codalab.data.0-coqa-work"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 86.4,
                 "out_of_domain_f1": 81.9,
                 "overall_f1": 85.0
@@ -109,13 +124,28 @@
         },
 	{
             "scores": {
+                "in_domain_f1": 82.6,
+                "out_of_domain_f1": 78.4,
+                "overall_f1": 81.4
+            },
+            "submission": {
+                "created": 1549003507,
+                "description": "BERT Large Finetuned Baseline (single model) (Anonymous)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "scissorsy-boyang-coqa-v4"
+            }
+        },
+	{
+            "scores": {
                 "in_domain_f1": 82.5,
                 "out_of_domain_f1": 77.6,
                 "overall_f1": 81.1
             },
             "submission": {
                 "created": 1548121867,
-                "description": "BERT Large Augmented (single model) (Microsoft Business Applications Group)",
+                "description": "BERT Large Augmented (single model) (Microsoft Dynamics 365 AI Research)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -145,11 +175,26 @@
             },
             "submission": {
                 "created": 1543539993,
-                "description": "SDNet (ensemble model) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
+                "description": "SDNet (ensemble) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "sivareddy"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 80.2,
+                "out_of_domain_f1": 76.5,
+                "overall_f1": 79.1
+            },
+            "submission": {
+                "created": 1550854347,
+                "description": "MCNet (single model) (Nanjing University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "tracy-coqa-bert-large"
             }
         },
 	{
@@ -167,6 +212,21 @@
                 "user_name": "KKnotalone-TransformerCoqa"
             }
         },
+	{
+            "scores": {
+                "in_domain_f1": 78.2,
+                "out_of_domain_f1": 74.1,
+                "overall_f1": 77.0
+            },
+            "submission": {
+                "created": 1550854347,
+                "description": "GraphFlow (single model) (Anonymous)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "hugo-coqa-eval"
+            }
+        },
         {
             "scores": {
                 "in_domain_f1": 78.0,
@@ -175,13 +235,29 @@
             },
             "submission": {
                 "created": 1543268369,
-                "description": "SDNet (single model) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
+                "description": "SDNet (single model) (Microsoft Speech and Dialogue Research Group) https://github.com/Microsoft/SDNet",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "sivareddy"
             }
         },
+	{
+            "scores": {
+                "in_domain_f1": 76.8,
+                "out_of_domain_f1": 73.0,
+                "overall_f1": 75.7
+            },
+            "submission": {
+                "created": 1549394648,
+                "description": "CANet (single model) (Northwestern Polytechnical University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "lrh000-CANet"
+            }
+        },
+
         {
             "scores": {
                 "in_domain_f1": 76.3,
@@ -210,6 +286,21 @@
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "tracy-coqa-0112"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 74.3,
+                "out_of_domain_f1": 68.8,
+                "overall_f1": 72.7
+            },
+            "submission": {
+                "created": 1549003507,
+                "description": "XyzNet (single model) (Beijing Normal University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "sivareddy-coqa-peanut8-c"
             }
         },
         {
