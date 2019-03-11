@@ -169,13 +169,28 @@
         },
         {
             "scores": {
+                "in_domain_f1": 80.9,
+                "out_of_domain_f1": 77.1,
+                "overall_f1": 79.8
+            },
+            "submission": {
+                "created": 1552267318,
+                "description": "CNet (single model) (Microsoft Speech and Dialogue Research Group) https://github.com/Microsoft/SDNet",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "qq2019-c2019"
+            }
+        },
+        {
+            "scores": {
                 "in_domain_f1": 80.7,
                 "out_of_domain_f1": 75.9,
                 "overall_f1": 79.3
             },
             "submission": {
                 "created": 1543539993,
-                "description": "SDNet (ensemble) (Microsoft Speech and Dialogue Research Group) https://arxiv.org/abs/1812.03593",
+                "description": "SDNet (ensemble) (Microsoft Speech and Dialogue Research Group) https://github.com/Microsoft/SDNet",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -190,7 +205,7 @@
             },
             "submission": {
                 "created": 1550854347,
-                "description": "MCNet (single model) (Nanjing University)",
+                "description": "QTNet (single model) (Nanjing University)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": false,
@@ -214,12 +229,12 @@
         },
 	{
             "scores": {
-                "in_domain_f1": 78.2,
-                "out_of_domain_f1": 74.1,
-                "overall_f1": 77.0
+                "in_domain_f1": 78.4,
+                "out_of_domain_f1": 74.5,
+                "overall_f1": 77.3
             },
             "submission": {
-                "created": 1550854347,
+                "created": 1551396181,
                 "description": "GraphFlow (single model) (Anonymous)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
