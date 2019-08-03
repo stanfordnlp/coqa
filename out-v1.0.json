@@ -62,6 +62,51 @@
         "submission_tag": "squad-2.0-test-submit"
     },
     "leaderboard": [
+	{
+            "scores": {
+                "in_domain_f1": 89.9,
+                "out_of_domain_f1": 88.0,
+                "overall_f1": 89.4
+            },
+            "submission": {
+                "created": 1553888701,
+                "description": "Google SQuAD 2.0 + MMFT (ensemble) (MSRA + SDRG)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "coqa-barton"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 88.7,
+                "out_of_domain_f1": 85.4,
+                "overall_f1": 87.8
+            },
+            "submission": {
+                "created": 1553888701,
+                "description": "ConvBERT (ensemble) (Joint Laboratory of HIT and iFLYTEK Research)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "zpchen_3-CoQA_ensemble_model"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 88.5,
+                "out_of_domain_f1": 86.0,
+                "overall_f1": 87.8
+            },
+            "submission": {
+                "created": 1553888701,
+                "description": "Google SQuAD 2.0 + MMFT (single model) (MSRA + SDRG)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "coqa-barton"
+            }
+        },
         {
             "scores": {
                 "in_domain_f1": 87.5,
@@ -75,6 +120,21 @@
                 "num_total_submissions": 1,
                 "public": false,
                 "user_name": "nya.codalab.data.0-coqa-work"
+            }
+        },
+        {
+            "scores": {
+                "in_domain_f1": 87.7,
+                "out_of_domain_f1": 84.6,
+                "overall_f1": 86.8
+            },
+            "submission": {
+                "created": 1553807323,
+                "description": "ConvBERT (single model) (Joint Laboratory of HIT and iFLYTEK Research)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "zpchen_3-CoQA_single_model"
             }
         },
         {
@@ -100,7 +160,7 @@
             },
             "submission": {
                 "created": 1546564583,
-                "description": "BERT + Answer Verification (single model) (Sogou Search AI Group)",
+                "description": "BERT + Answer Verification (single model) (Sogou Search AI Group) https://github.com/sogou/SMRCToolkit",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -205,11 +265,71 @@
             },
             "submission": {
                 "created": 1550854347,
-                "description": "QTNet (single model) (Nanjing University)",
+                "description": "CQANet (single model) (Nanjing University)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": false,
                 "user_name": "tracy-coqa-bert-large"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 80.1,
+                "out_of_domain_f1": 75.7,
+                "overall_f1": 78.9
+            },
+            "submission": {
+                "created": 1557435432,
+                "description": "CANet (single model) (Northwestern Polytechnical University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "lrh000-CANet"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 79.7,
+                "out_of_domain_f1": 76.3,
+                "overall_f1": 78.7
+            },
+            "submission": {
+                "created": 1563079062,
+                "description": "BERT Finetuned Baseline (single model)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "helloWangYt-bertonCoQA"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 79.8,
+                "out_of_domain_f1": 75.9,
+                "overall_f1": 78.7
+            },
+            "submission": {
+                "created": 1555219249,
+                "description": "BERT w/ 2-context (single model) (NTT Media Intelligence Laboratories) https://arxiv.org/pdf/1905.12848",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "coqa-yo-rs-kh-nk"
+            }
+        },
+	{
+            "scores": {
+                "in_domain_f1": 76.0,
+                "out_of_domain_f1": 70.4,
+                "overall_f1": 74.4
+            },
+            "submission": {
+                "created": 1563338063,
+                "description": "HisFurC + BERT (single model)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "cqa_summit1"
             }
         },
 	{
@@ -229,13 +349,28 @@
         },
 	{
             "scores": {
+                "in_domain_f1": 79.2,
+                "out_of_domain_f1": 74.1,
+                "overall_f1": 77.7
+            },
+            "submission": {
+                "created": 1555713312,
+                "description": "Bert-FlowDelta (single model) (Anonymous)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "exe1023-coqa_submit"
+            }
+        },
+	{
+            "scores": {
                 "in_domain_f1": 78.4,
                 "out_of_domain_f1": 74.5,
                 "overall_f1": 77.3
             },
             "submission": {
                 "created": 1551396181,
-                "description": "GraphFlow (single model) (Anonymous)",
+                "description": "GraphFlow (single model) (RPI and IBM Research) https://graphreason.github.io/papers/13.pdf",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": false,
@@ -257,22 +392,6 @@
                 "user_name": "sivareddy"
             }
         },
-	{
-            "scores": {
-                "in_domain_f1": 76.8,
-                "out_of_domain_f1": 73.0,
-                "overall_f1": 75.7
-            },
-            "submission": {
-                "created": 1549394648,
-                "description": "CANet (single model) (Northwestern Polytechnical University)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
-                "public": false,
-                "user_name": "lrh000-CANet"
-            }
-        },
-
         {
             "scores": {
                 "in_domain_f1": 76.3,
