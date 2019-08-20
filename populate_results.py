@@ -11,17 +11,17 @@ submission_date = datetime.strptime(lines[4].strip(), '%Y-%m-%d')
 timestamp = submission_date.strftime("%s")
 
 
-'''os.system('rm working/%s.with_future.json working/%s.no_future.json working/%s.full_test.json; \
+os.system('rm working/%s.with_future.json working/%s.no_future.json working/%s.full_test.json; \
     cl work sivareddy-coqa-%s; \
     cl download with_future_results/stdout -o working/%s.with_future.json; \
     cl download no_future_results/stdout -o working/%s.no_future.json;  \
-    cl download full_test_results/stdout -o working/%s.full_test.json' %(wid, wid, wid, wid, wid, wid, wid))'''
+    cl download full_test_results/stdout -o working/%s.full_test.json' %(wid, wid, wid, wid, wid, wid, wid))
 
 no_future = json.load(open("working/%s.no_future.json" %(wid)))
 with_future = json.load(open("working/%s.with_future.json" %(wid)))
 full_test = json.load(open("working/%s.full_test.json" %(wid)))
 
-if no_future['overall'] == with_future['overall']:
+if (with_future['overall']['f1'] - no_future['overall']['f1']) < 0.5:
     print("######### Eval Success ########")
     print(open("working/%s.full_test.json" %(wid)).read())
     entry = {}
@@ -40,7 +40,7 @@ if no_future['overall'] == with_future['overall']:
     
 else:
     print("######### Eval Failed ########")
-    print("no_future (%.2f) and with_future (%.2f) results don't match" %(no_future['overall'], with_future['overall']))
+    print("no_future (%.2f) and with_future (%.2f) results don't match" %(no_future['overall']['f1'], with_future['overall']['f1']))
     
     print("#### Without Future #####")
     print(open("working/%s.no_future.json" %(wid)).read())
