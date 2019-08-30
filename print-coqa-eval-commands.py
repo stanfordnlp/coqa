@@ -5,9 +5,14 @@ wid = raw_input()
 
 sys.stderr.write("command:\n")
 command = raw_input("")
+command = command.replace(" :coqa-dev-v1.0.json", " coqa-dev-v1.0.json:coqa-dev-v1.0.json")
 
 sys.stderr.write("pred path:\n")
 pred_path = raw_input("")
+
+print("# remove existing worksheet")
+print("cl wrm sivareddy-coqa-%s --force"%(wid))
+print("")
 
 print("# create worksheet")
 print("cl new sivareddy-coqa-%s"%(wid))
