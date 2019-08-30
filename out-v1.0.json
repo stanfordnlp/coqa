@@ -57,10 +57,10 @@
     "host": "https://worksheets.codalab.org", 
     "max_submissions_per_period": 5, 
     "max_leaderboard_size": 10000, 
+    "refresh_period_seconds": 60, 
     "metadata": {
       "name": "SQuAD v2.0 Competition Leaderboard"
-    }, 
-    "refresh_period_seconds": 60
+    }
   }, 
   "leaderboard": [
     {
@@ -151,6 +151,18 @@
         "in_domain_f1": 86.4, 
         "out_of_domain_f1": 81.9, 
         "overall_f1": 85.0
+      }
+    }, 
+    {
+      "submission": {
+        "worksheet": "0xb1ab4d24d93a46679ce7a7c3febbdbcf", 
+        "description": "BERT + AttentionFusionNet (single model) (Beijing Kingsoft AI Lab)", 
+        "created": "1566802800"
+      }, 
+      "scores": {
+        "in_domain_f1": 85.4, 
+        "out_of_domain_f1": 77.3, 
+        "overall_f1": 83.0
       }
     }, 
     {
@@ -347,7 +359,7 @@
     }, 
     {
       "submission": {
-        "description": "Bert-FlowDelta (single model) (National Taiwan University, MiuLab) https://arxiv.org/abs/1908.05117",
+        "description": "Bert-FlowDelta (single model) (National Taiwan University, MiuLab) https://arxiv.org/abs/1908.05117", 
         "created": 1555713312, 
         "user_name": "exe1023-coqa_submit", 
         "num_period_submissions": 0, 
