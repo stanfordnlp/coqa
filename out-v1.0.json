@@ -65,6 +65,30 @@
   "leaderboard": [
     {
       "submission": {
+        "worksheet": "0x11937f6271e14dfabb2fae4e2a1c8761-ensemble", 
+        "description": "RoBERTa + AT + KD (ensemble) (Zhuiyi Technology)", 
+        "created": "1567666800"
+      }, 
+      "scores": {
+        "in_domain_f1": 91.4, 
+        "out_of_domain_f1": 89.2, 
+        "overall_f1": 90.7
+      }
+    }, 
+    {
+      "submission": {
+        "worksheet": "0x11937f6271e14dfabb2fae4e2a1c8761-single", 
+        "description": "RoBERTa + AT + KD (single model) (Zhuiyi Technology)", 
+        "created": "1567666800"
+      }, 
+      "scores": {
+        "in_domain_f1": 90.9, 
+        "out_of_domain_f1": 89.2, 
+        "overall_f1": 90.4
+      }
+    }, 
+    {
+      "submission": {
         "description": "Google SQuAD 2.0 + MMFT (ensemble) (MSRA + SDRG)", 
         "created": 1553888701, 
         "user_name": "coqa-barton", 

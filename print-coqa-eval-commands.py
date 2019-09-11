@@ -27,7 +27,7 @@ print("# copy data")
 print('cl add text "### data"')
 print("cl wadd sivareddy-coqa-data sivareddy-coqa-%s" %(wid))
 print('cl add text "### source code"')
-print("cl wadd %s sivareddy-coqa-%s" %(wid, wid))
+print("cl wadd %s sivareddy-coqa-%s" %(wid.split("-")[0], wid))
 print("")
 
 print('cl add text "### checks"')
