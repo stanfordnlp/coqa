@@ -374,7 +374,7 @@
     }, 
     {
       "submission": {
-        "description": "GraphFlow (single model) (RPI and IBM Research) https://graphreason.github.io/papers/13.pdf", 
+        "description": "GraphFlow (single model) (RPI and IBM Research) https://arxiv.org/pdf/1908.00059.pdf", 
         "created": 1551396181, 
         "user_name": "hugo-coqa-eval", 
         "num_period_submissions": 0, 
@@ -406,19 +406,7 @@
       "submission": {
         "worksheet": "0x488a1f0f136b4c6d83e0e5c15bd7aef2", 
         "description": "Flow Framework (single model) (SIAT NLP Group)", 
-        "created": "1565593200"
-      }, 
-      "scores": {
-        "in_domain_f1": 77.0, 
-        "out_of_domain_f1": 73.1, 
-        "overall_f1": 75.8
-      }
-    }, 
-    {
-      "submission": {
-        "worksheet": "0x488a1f0f136b4c6d83e0e5c15bd7aef2", 
-        "description": "Flow Framework (single model) (SIAT NLP Group)", 
-        "created": "1565593200"
+        "created": "1567073673"
       }, 
       "scores": {
         "in_domain_f1": 77.0, 
