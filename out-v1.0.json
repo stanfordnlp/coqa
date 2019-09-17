@@ -57,10 +57,10 @@
     "host": "https://worksheets.codalab.org", 
     "max_submissions_per_period": 5, 
     "max_leaderboard_size": 10000, 
+    "refresh_period_seconds": 60, 
     "metadata": {
       "name": "SQuAD v2.0 Competition Leaderboard"
-    }, 
-    "refresh_period_seconds": 60
+    }
   }, 
   "leaderboard": [
     {
@@ -100,6 +100,18 @@
         "in_domain_f1": 89.9, 
         "out_of_domain_f1": 88.0, 
         "overall_f1": 89.4
+      }
+    }, 
+    {
+      "submission": {
+        "worksheet": "0xbf56c4359c2342c9a4003088371a869b-2019-09-13", 
+        "description": "XLNet + Augmentation (single model) (Anonymous)", 
+        "created": "1568358000"
+      }, 
+      "scores": {
+        "in_domain_f1": 89.9, 
+        "out_of_domain_f1": 86.9, 
+        "overall_f1": 89.0
       }
     }, 
     {
