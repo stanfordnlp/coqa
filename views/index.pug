@@ -39,7 +39,7 @@ mixin squad_2_model_display(group, is_test)
     each model in group
       tr
         if is_test
-          td
+          td 
             p #{model.rank}
             span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
         td(style="word-break:break-word;")
@@ -73,25 +73,25 @@ block content
             .infoBody
               .infoHeadline
                 h2 What is CoQA?
-              p
-                | CoQA is a large-scale dataset for building
+              p 
+                | CoQA is a large-scale dataset for building 
                 span
                   b Co
-                  |nversational
+                  |nversational 
                   b Q
-                  |uestion
+                  |uestion 
                   b A
-                  |nswering
-                | systems. The goal of the CoQA challenge is to measure the ability of machines to understand a text passage and answer a series of interconnected questions that appear in a conversation. CoQA is pronounced as
+                  |nswering 
+                | systems. The goal of the CoQA challenge is to measure the ability of machines to understand a text passage and answer a series of interconnected questions that appear in a conversation. CoQA is pronounced as 
                 a(href="https://en.wikipedia.org/wiki/Coca") coca <img src="logo.png" width="8%">
                 | .
               a.btn.actionBtn(href="http://arxiv.org/abs/1808.07042") CoQA paper
               hr
               p
-                b  CoQA
-                | contains 127,000+ questions with answers collected from 8000+ conversations.
-                | Each conversation
-                | is collected by pairing two crowdworkers to chat about a passage in the form of questions and answers.
+                b  CoQA 
+                | contains 127,000+ questions with answers collected from 8000+ conversations. 
+                | Each conversation  
+                | is collected by pairing two crowdworkers to chat about a passage in the form of questions and answers. 
                 | The unique features of CoQA include 1) the questions are conversational; 2) the answers can be free-form text; 3) each answer also comes with an evidence subsequence highlighted in the passage; and 4) the passages are collected from seven diverse domains.
                 | CoQA has a lot of challenging phenomena not present in existing reading comprehension datasets, e.g., coreference and pragmatic reasoning.
 
@@ -104,7 +104,7 @@ block content
                     a.btn.actionBtn.inverseBtn(href="https://drive.google.com/open?id=1ik0d_nIsGdXLn8o7tYiiDWN6PK2XNy-D")
                       | Browse CoQA
 
-              p
+              p 
                 | Download a copy of the dataset in json format:
                 ul.list-unstyled
                   li
@@ -116,7 +116,7 @@ block content
               hr
               .infoHeadline
                 h2 Evaluation
-              p To evaluate your models, use the official evaluation script. To run the evaluation, use
+              p To evaluate your models, use the official evaluation script. To run the evaluation, use 
                 code
                   | python evaluate-v1.0.py --data-file &lt;path_to_dev-v1.0.json&gt; --pred-file &lt;path_to_predictions&gt;
                 |.
@@ -139,42 +139,42 @@ block content
                 | CoQA contains passages from seven domains. We make five of these public under the following licenses:
                 ul.list
                   li
-                    | Literature and Wikipedia passages are shared under
-                    a(href="https://creativecommons.org/licenses/by-sa/4.0/") CC BY-SA 4.0
-                    | license.
+                    | Literature and Wikipedia passages are shared under 
+                    a(href="https://creativecommons.org/licenses/by-sa/4.0/") CC BY-SA 4.0 
+                    | license. 
                   li
-                    | Children's stories are collected from
-                    a(href="https://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/") MCTest
-                    | which comes with
-                    a(href="https://github.com/mcobzarenco/mctest/blob/master/data/MCTest/LICENSE.pdf") MSR-LA
-                    | license.
+                    | Children's stories are collected from 
+                    a(href="https://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/") MCTest 
+                    | which comes with 
+                    a(href="https://github.com/mcobzarenco/mctest/blob/master/data/MCTest/LICENSE.pdf") MSR-LA 
+                    | license. 
                   li
-                    | Middle/High school exam passages are collected from
-                    a(href="https://arxiv.org/abs/1704.04683") RACE
-                    | which comes with its
-                    a(href="http://www.cs.cmu.edu/~glai1/data/race/") own
-                    | license.
+                    | Middle/High school exam passages are collected from 
+                    a(href="https://arxiv.org/abs/1704.04683") RACE 
+                    | which comes with its 
+                    a(href="http://www.cs.cmu.edu/~glai1/data/race/") own 
+                    | license. 
                   li
-                    | News passages are collected from the
-                    a(href="https://arxiv.org/abs/1506.03340") DeepMind CNN dataset
-                    | which comes with
-                    a(href="https://github.com/deepmind/rc-data/blob/master/LICENSE") Apache
-                    | license.
+                    | News passages are collected from the 
+                    a(href="https://arxiv.org/abs/1506.03340") DeepMind CNN dataset  
+                    | which comes with 
+                    a(href="https://github.com/deepmind/rc-data/blob/master/LICENSE") Apache 
+                    | license. 
               .infoHeadline
                 h2 Questions?
-              p
-                | Ask us questions at our
-                a(href="https://groups.google.com/forum/#!forum/coqa") google group
-                | or at
-                a(href="mailto:siva.reddy@mila.quebec") siva.reddy@mila.quebec
-                | or
+              p 
+                | Ask us questions at our 
+                a(href="https://groups.google.com/forum/#!forum/coqa") google group 
+                | or at 
+                a(href="mailto:siva.reddy@mila.quebec") siva.reddy@mila.quebec 
+                | or 
                 a(href="mailto:danqic@cs.princeton.edu") danqic@cs.princeton.edu
                 | .
               .infoHeadline
                 h2 Acknowledgements
-              p
-                | We thank the
-                a(href="https://rajpurkar.github.io/SQuAD-explorer/") SQuAD team
+              p 
+                | We thank the 
+                a(href="https://rajpurkar.github.io/SQuAD-explorer/") SQuAD team 
                 | for allowing us to use their code and templates for generating this website.
             .infoSubheadline
               include includes/tweet
@@ -184,3 +184,4 @@ block content
               .infoHeadline
                 h2 Leaderboard
               +squad_2_model_display(test2, true)
+
