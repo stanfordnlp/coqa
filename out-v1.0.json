@@ -66,7 +66,7 @@
     {
       "submission": {
         "worksheet": "0x11937f6271e14dfabb2fae4e2a1c8761-ensemble", 
-        "description": "RoBERTa + AT + KD (ensemble) (Zhuiyi Technology)", 
+        "description": "RoBERTa + AT + KD (ensemble) (Zhuiyi Technology) https://arxiv.org/abs/1909.10772", 
         "created": "1567666800"
       }, 
       "scores": {
@@ -78,13 +78,25 @@
     {
       "submission": {
         "worksheet": "0x11937f6271e14dfabb2fae4e2a1c8761-single", 
-        "description": "RoBERTa + AT + KD (single model) (Zhuiyi Technology)", 
+        "description": "RoBERTa + AT + KD (single model) (Zhuiyi Technology) https://arxiv.org/abs/1909.10772", 
         "created": "1567666800"
       }, 
       "scores": {
         "in_domain_f1": 90.9, 
         "out_of_domain_f1": 89.2, 
         "overall_f1": 90.4
+      }
+    }, 
+    {
+      "submission": {
+        "worksheet": "0x0b03adf0e562427d9dcce81541fa1b59-single", 
+        "description": "TR-MT (ensemble) (WeChatAI)", 
+        "created": "1577854800"
+      }, 
+      "scores": {
+        "in_domain_f1": 91.1, 
+        "out_of_domain_f1": 87.9, 
+        "overall_f1": 90.2
       }
     }, 
     {
@@ -104,8 +116,20 @@
     }, 
     {
       "submission": {
+        "worksheet": "0x8214d8fceefa431688ec9ca22f7fe3ce-single", 
+        "description": "TR-MT (single model) (WeChatAI)", 
+        "created": "1576645200"
+      }, 
+      "scores": {
+        "in_domain_f1": 90.4, 
+        "out_of_domain_f1": 86.8, 
+        "overall_f1": 89.3
+      }
+    }, 
+    {
+      "submission": {
         "worksheet": "0xbf56c4359c2342c9a4003088371a869b-2019-09-13", 
-        "description": "XLNet + Augmentation (single model) (Xiaoming)", 
+        "description": "XLNet + Augmentation (single model) (Xiaoming) https://github.com/stevezheng23/xlnet_extension_tf", 
         "created": "1568358000"
       }, 
       "scores": {
