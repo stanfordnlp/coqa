@@ -1,14 +1,14 @@
 import sys
 
 sys.stderr.write("worksheet id:\n")
-wid = raw_input()
+wid = input()
 
 sys.stderr.write("command:\n")
-command = raw_input("")
+command = input("")
 command = command.replace(" :coqa-dev-v1.0.json", " coqa-dev-v1.0.json:coqa-dev-v1.0.json")
 
 sys.stderr.write("pred path:\n")
-pred_path = raw_input("")
+pred_path = input("")
 
 print("# remove existing worksheet")
 print("cl wrm sivareddy-coqa-%s --force"%(wid))
